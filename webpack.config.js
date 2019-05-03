@@ -47,18 +47,18 @@ module.exports = (env, options) => {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            publicPath: './dist'
+                            publicPath: './public'
                         }
                     }
                 },
                 {
-                    test: /\.()$/,
+                    test: /\.(png|jpg)$/,
                     exclude: /node_modules/,
                     use: {
                       loader: 'url-loader',
                       options: {
                         name: '[name].[ext]?[hash]',
-                        publicPath: './dist/',
+                        publicPath: './public/',
                         limit: 10000
                       }
                     }
@@ -87,22 +87,22 @@ module.exports = (env, options) => {
     if (options.mode === 'development') {
         config.mode = 'development';
         config.devServer = {
-        port: 3000,
-        contentBase: path.resolve(__dirname, 'public'),
-        compress: true,
-        watchContentBase: true
+            port: 3000,
+            contentBase: path.resolve(__dirname, 'public'),
+            compress: true,
+            watchContentBase: true
         };
     } else {
         config.mode = 'production';
         config.plugins = [
-        ...config.plugins,
-        ...[
-            new uglifyJSWebpackPlugin({
-            cache: true,
-            parallel: true,
-            sourceMap: true
-            })
-        ]
+            ...config.plugins,
+            ...[
+                new uglifyJSWebpackPlugin({
+                    cache: true,
+                    parallel: true,
+                    sourceMap: true
+                })
+            ]
         ];
     }
 

@@ -1,0 +1,7 @@
+.Profile > Image {
+  width: 64px;
+  height: 85px;
+  background-image: url('../images/profile_x64.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}

@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/wdjty326/wdjty326.github.io/issues"
   },
-  "homepage": "https://github.com/wdjty326/wdjty326.github.io#readme",
+  "homepage": "https://wdjty326.github.io",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/polyfill": "^7.4.4",
