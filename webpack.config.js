@@ -6,7 +6,7 @@ const uglifyJSWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = (env, options) => {
     const config = {
-        entry: ['@babel/polyfill', './src/index.js'],
+        entry: ['@babel/polyfill', './src/index.jsx'],
         output: {
             path: path.resolve(__dirname, 'public'),
             filename: '[name].bundle.js',
@@ -57,9 +57,9 @@ module.exports = (env, options) => {
                     use: {
                       loader: 'url-loader',
                       options: {
-                        name: '[name].[ext]?[hash]',  // 파일명 또는 파일해쉬값
-                        publicPath: './dist/',  // 빌드 후 limit가 넘는 파일 위치
-                        limit: 10000  // 10000byte 제한
+                        name: '[name].[ext]?[hash]',
+                        publicPath: './dist/',
+                        limit: 10000
                       }
                     }
                 }

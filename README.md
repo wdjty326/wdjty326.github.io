@@ -7,3 +7,6 @@ github.io 용 포트폴리오 사이트
 
 ### 빌드 환경
 - Webpack v4 
+
+## 디자인 참고
+- http://jekyllthemes.org/
