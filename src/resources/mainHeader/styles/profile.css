@@ -1,7 +1,29 @@
-.Profile > Image {
+.Profile {
+  display: inline-flex;
+  align-items: center;
+}
+
+.Profile > div {
+  display: inline-block;
+}
+
+.Profile > .Image {
   width: 64px;
   height: 85px;
   background-image: url('../images/profile_x64.png');
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.Profile > .Text {
+  padding-left: 18px;
+  color: #ffffff;
+}
+
+.Profile > .Text > p:nth-child(1) {
+  font-size: 24px;
+}
+
+.Profile > .Text > p:nth-child(2) {
+  font-size: 16px;
 }

@@ -1,15 +1,17 @@
 #MainHeader {
   position: relative;
-  display: block;
+  display: flex;
   width: 100%;
-  min-width: 1200px;
   height: 100%;
-  max-height: 300px;
+  max-height: 215px;
   background-color: #66cc66;
+  align-items: center;
 }
 
 #MainHeader > .Content {
   position: relative;
+  width: 100%;
+  max-width: 1024px;
   margin: 0 auto;
   left: 0;
   right: 0;

@@ -47,7 +47,7 @@ module.exports = (env, options) => {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            publicPath: './public'
+                            publicPath: './'
                         }
                     }
                 },
@@ -57,8 +57,9 @@ module.exports = (env, options) => {
                     use: {
                       loader: 'url-loader',
                       options: {
-                        name: '[name].[ext]?[hash]',
-                        publicPath: './public/',
+                        mimetype: 'image/png',
+                        name: '[name].[ext]',
+                        publicPath: './',
                         limit: 10000
                       }
                     }
