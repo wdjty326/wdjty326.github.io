@@ -8,7 +8,7 @@ module.exports = (env, options) => {
     const config = {
         entry: ['@babel/polyfill', './src/index.jsx'],
         output: {
-            path: path.resolve(__dirname, 'docs'),
+            path: path.resolve(__dirname, 'public'),
             filename: '[name].bundle.js',
             chunkFilename: '[name].[id].bundle.js'
         },
@@ -47,7 +47,7 @@ module.exports = (env, options) => {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            publicPath: './docs'
+                            publicPath: './public'
                         }
                     }
                 },
@@ -58,7 +58,7 @@ module.exports = (env, options) => {
                       loader: 'url-loader',
                       options: {
                         name: '[name].[ext]?[hash]',
-                        publicPath: './docs/',
+                        publicPath: './public/',
                         limit: 10000
                       }
                     }
