@@ -2,6 +2,7 @@ html, body, #root {
   width: 100%;
   height: 100%;
   margin: 0;
+  background-color: #ddd;
 }
 
 p {
@@ -27,7 +28,7 @@ h1 {
   cursor: pointer;
 }
 
-.BrandButton > svg {
+.BrandButton > a {
   font-size: 32px;
   color: #999;
 }

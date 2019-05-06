@@ -6,9 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../../resources/mainHeader/styles/profile.css'
 
-const Button = ({ children }) => (
+const Button = ({ link, children }) => (
   <div className="BrandButton">
-    {children}
+    <a href={link}>
+      {children}
+    </a>
   </div>
 );
 
@@ -24,10 +26,10 @@ class MainHeaderProfile extends React.Component {
           </div>
         </div>
         <div className="Buttons">
-          <Button>
+          <Button link="https://www.facebook.com/wdjty?ref=bookmarks">
             <FontAwesomeIcon icon={faFacebookF} />
           </Button>
-          <Button>
+          <Button link="https://github.com/wdjty326">
             <FontAwesomeIcon icon={faGithub} />
           </Button>
         </div>
