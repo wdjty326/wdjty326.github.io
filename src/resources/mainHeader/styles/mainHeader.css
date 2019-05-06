@@ -10,9 +10,11 @@
 
 #MainHeader > .Content {
   position: relative;
+  display: flex;
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
   left: 0;
   right: 0;
+  align-items: center;
 }

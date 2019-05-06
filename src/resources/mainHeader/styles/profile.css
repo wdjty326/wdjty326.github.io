@@ -1,13 +1,18 @@
 .Profile {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
+  width: 240px;
 }
 
 .Profile > div {
   display: inline-block;
 }
 
-.Profile > .Image {
+.Profile > .Info {
+  display: inline-flex;
+  align-content: center;
+}
+
+.Profile > .Info > .Image {
   width: 64px;
   height: 85px;
   background-image: url('../images/profile_x64.png');
@@ -15,15 +20,40 @@
   background-position: center center;
 }
 
-.Profile > .Text {
+.Profile > .Info > .Text {
   padding-left: 18px;
   color: #ffffff;
 }
 
-.Profile > .Text > p:nth-child(1) {
+.Profile > .Info > .Text > p:nth-child(1) {
   font-size: 24px;
 }
 
-.Profile > .Text > p:nth-child(2) {
+.Profile > .Info > .Text > p:nth-child(2) {
   font-size: 16px;
+}
+
+.Profile > .Buttons {
+  display: block;
+  margin-top: 8px;
+}
+
+.Title {
+  position: relative;
+  display: inline-block;
+  left: 60px;
+}
+
+.Title > h1 {
+  color: #fff;
+}
+
+.Title::after {
+  content: '\00a0';
+  position: absolute;
+  margin-left: 12px;
+  width: 212px;
+  height: 8px;
+  background-color: #ffffff;
+  opacity: .8;
 }
