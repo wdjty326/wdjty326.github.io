@@ -52,7 +52,7 @@ module.exports = (env, options) => {
                     }
                 },
                 {
-                    test: /\.(png|jpg)$/,
+                    test: /\.(png|jpg|svg)$/,
                     exclude: /node_modules/,
                     use: {
                       loader: 'url-loader',
@@ -73,6 +73,7 @@ module.exports = (env, options) => {
                 meta: {
                     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
                 },
+                favicon: './src/favicon.ico',
                 template: './src/index.html'
             }),
             new miniCssExtractPlugin({
