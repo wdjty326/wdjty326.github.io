@@ -3,7 +3,18 @@
   display: inline-block;
   top: 32px;
   width: 240px;
-  height: 240px;
   background-color: #66cc66;
   box-shadow: 1px 1px 2px #999;
+}
+
+.MenuItem {
+  list-style-type: none;
+  padding: 1em 0;
+  font-size: 1.5em;
+  line-height: 1em;
+  color: #fff;
+}
+
+.MenuItem > svg {
+  margin-right: .3em
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "icon": "home",
+    "text": "메인"
+  }, {
+    "icon": ["fab", "stripe-s"],
+    "text": "기술"
+  }, {
+    "icon": "desktop",
+    "text": "프로젝트"
+  }, {
+    "icon": "graduation-cap",
+    "text": "비전"
+  }, {
+    "icon": "comments",
+    "text": "기타"
+  }
+]
