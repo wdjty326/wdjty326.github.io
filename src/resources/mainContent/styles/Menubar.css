@@ -28,7 +28,10 @@
   left: 0;
   background-color: #66b3ff;
 }
-
-.MenuItem > svg {
+.MenuItem > a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.MenuItem > a > svg {
   margin-right: .3em
 }

@@ -71,7 +71,7 @@ module.exports = (env, options) => {
             new htmlWebpackPlugin({
                 title: 'JeongTaekYu Portfolio',
                 meta: {
-                    viewport: 'width=device-width, user-scalable=no'
+                    viewport: 'width=1920, user-scalable=no'
                 },
                 favicon: './src/favicon.ico',
                 template: './src/index.html'
