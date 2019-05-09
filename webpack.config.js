@@ -41,7 +41,7 @@ module.exports = (env, options) => {
                     use: [ miniCssExtractPlugin.loader, 'css-loader' ]
                 },
                 {
-                    test: '/\.()$/',
+                    test: /\.(ico)$/,
                     exclude: /node_modules/,
                     use: {
                         loader: 'file-loader',
@@ -71,7 +71,7 @@ module.exports = (env, options) => {
             new htmlWebpackPlugin({
                 title: 'JeongTaekYu Portfolio',
                 meta: {
-                    viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+                    viewport: 'width=device-width, user-scalable=no'
                 },
                 favicon: './src/favicon.ico',
                 template: './src/index.html'

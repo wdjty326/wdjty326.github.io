@@ -1,0 +1,10 @@
+.frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #d9d;
+  width: calc(100% - 272px);
+  max-width: 1008px;
+  height: 100%;
+  max-height: 600px;
+}

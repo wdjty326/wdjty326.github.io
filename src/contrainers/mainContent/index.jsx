@@ -1,6 +1,7 @@
 // 메인 컨텐트
 import React from 'react';
 import Menubar from './menubar';
+import Frame from './frame';
 import '../../resources/mainContent/styles/mainContent.css';
 import '../../resources/mainContent/styles/Menubar.css';
 
@@ -9,6 +10,7 @@ class MainContent extends React.Component {
     return (
       <div className="MainContent">
         <Menubar />
+        <Frame />
       </div>
     )
   }
