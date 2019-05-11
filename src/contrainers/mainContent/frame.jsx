@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
-import * as Page from './page';
+import Page from './page';
 import '../../resources/mainContent/styles/Frame.css';
 
 
@@ -10,13 +10,10 @@ const mapStateToProps = state => state.common;
 class Frame extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       menuList: [],
     };
 
-    
-    console.log(Page);
     this.updateMenuList = this.updateMenuList.bind(this);
   }
 
@@ -26,7 +23,7 @@ class Frame extends React.Component {
       menuList: menuList.map(menuInfo => ({
         ...menuInfo,
         ...{
-          component: null,
+          component: Page[menuInfo.id],
         }
       }))
     })
@@ -37,14 +34,14 @@ class Frame extends React.Component {
   }
 
   render() {
-    const { menuList } = this.props;
+    const { menuList } = this.state;
     return (
       <div className="frame">
         {
           menuList.map((menuInfo, idx) => {
-            const { exact, link } = menuInfo;
+            const { exact, link, component } = menuInfo;
             return (
-              <Route exact={(exact)} path={link} />
+              <Route key={idx} exact={(exact)} path={link} component={component} />
             )
           })
         }

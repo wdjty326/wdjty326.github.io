@@ -92,7 +92,8 @@ module.exports = (env, options) => {
             port: 3000,
             contentBase: path.resolve(__dirname, 'public'),
             compress: true,
-            watchContentBase: true
+            watchContentBase: true,
+            historyApiFallback: true
         };
     } else {
         config.mode = 'production';

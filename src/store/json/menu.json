@@ -1,22 +1,27 @@
 [
   {
+    "id": "Home",
     "icon": "home",
     "text": "메인",
     "link": "/",
     "exact": true
   }, {
+    "id": "Technology",
     "icon": ["fab", "stripe-s"],
     "text": "기술",
     "link": "/technology"
   }, {
+    "id": "Project",
     "icon": "desktop",
     "text": "프로젝트",
     "link": "/project"
   }, {
+    "id": "Future",
     "icon": "graduation-cap",
     "text": "비전",
     "link": "/future"
   }, {
+    "id": "Etc",
     "icon": "comments",
     "text": "기타",
     "link": "/etc"

@@ -4,10 +4,10 @@ import Project from './project';
 import Future from './future';
 import Etc from './etc';
 
-export {
+export default ({
   Home,
   Technology,
   Project,
   Future,
   Etc,
-};
+});
