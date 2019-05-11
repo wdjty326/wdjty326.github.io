@@ -1,8 +1,11 @@
 .MainMenubar {
-  position: absolute;
+  position: fixed;
+  top: 245px;
+  right: 32px;
   width: 240px;
   background-color: #8080ff;
   box-shadow: 1px 1px 2px #999;
+  z-index: 999;
 }
 
 .MenuItem {
@@ -31,7 +34,9 @@
   padding: 1.2em .6em;
   display: block;
   text-decoration: none;
+  font-family: 'Sunflower', sans-serif;
   color: #ffffff;
+  cursor: pointer;
 }
 .MenuItem > a > svg {
   margin-right: .3em

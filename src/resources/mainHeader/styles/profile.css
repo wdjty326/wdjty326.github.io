@@ -22,15 +22,16 @@
 
 .Profile > .Info > .Text {
   padding-left: 18px;
-  color: #ffffff;
+  font-family: 'Roboto Mono', monospace;
+  color: #6666ff;
 }
 
 .Profile > .Info > .Text > p:nth-child(1) {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .Profile > .Info > .Text > p:nth-child(2) {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .Profile > .Buttons {
@@ -45,7 +46,8 @@
 }
 
 .Title > h1 {
-  color: #fff;
+  color: #6666ff;
+  font-family: 'Sunflower', sans-serif;
 }
 
 .Title::after {
@@ -54,6 +56,6 @@
   margin-left: 12px;
   width: 212px;
   height: 8px;
-  background-color: #ffffff;
+  background-color: #6666ff;
   opacity: .8;
 }
