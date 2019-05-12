@@ -1,4 +1,5 @@
 var path = require('path');
+const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -88,6 +89,15 @@ module.exports = (env, options) => {
 
     if (options.mode === 'development') {
         config.mode = 'development';
+        config.plugins = [
+            ...config.plugins,
+            ...[
+                new webpack.EnvironmentPlugin({
+                    PUBLIC_URL: 'http://localhost:3000/',
+                    NODE_ENV: 'production',
+                }),
+            ]
+        ];
         config.devServer = {
             port: 3000,
             contentBase: path.resolve(__dirname, 'public'),
@@ -104,7 +114,11 @@ module.exports = (env, options) => {
                     cache: true,
                     parallel: true,
                     sourceMap: true
-                })
+                }),
+                new webpack.EnvironmentPlugin({
+                    PUBLIC_URL: 'https://wdjty326.gibhub.com/',
+                    NODE_ENV: 'production',
+                }),
             ]
         ];
     }
