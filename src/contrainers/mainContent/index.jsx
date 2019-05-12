@@ -1,7 +1,7 @@
 // 메인 컨텐트
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { getMenuList } from '../../store/actions/commonAction';
 import Menubar from './menubar';
 import Frame from './frame';
@@ -20,7 +20,7 @@ class MainContent extends React.Component {
 
   render() {
     return (
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div className="MainContent">
           <Menubar />
           <Frame />
