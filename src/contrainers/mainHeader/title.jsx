@@ -7,7 +7,7 @@ class MainHeaderTitle extends React.Component {
   render() {
     return (
       <div className="Title"> {/* 타이틀 */}
-        <h1>포트폴리오</h1>
+        <h1>PortFolio</h1>
       </div>
     );
   }

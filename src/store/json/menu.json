@@ -2,28 +2,28 @@
   {
     "id": "Home",
     "icon": "home",
-    "text": "메인",
+    "text": "Main",
     "link": "/",
     "exact": true
   }, {
     "id": "Technology",
     "icon": ["fab", "stripe-s"],
-    "text": "기술",
+    "text": "Technology",
     "link": "/technology"
   }, {
     "id": "Project",
     "icon": "desktop",
-    "text": "프로젝트",
+    "text": "Project",
     "link": "/project"
   }, {
     "id": "Future",
     "icon": "graduation-cap",
-    "text": "비전",
+    "text": "Future",
     "link": "/future"
   }, {
     "id": "Etc",
     "icon": "comments",
-    "text": "기타",
+    "text": "etc",
     "link": "/etc"
   }
 ]
