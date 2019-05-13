@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MenuItem from './menuItem';
+import './menubar.scss';
 
 const mapStateToProps = state => state.common;
 class Menubar extends React.Component {
