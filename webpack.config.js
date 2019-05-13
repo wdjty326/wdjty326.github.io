@@ -37,9 +37,9 @@ module.exports = (env, options) => {
                     use: 'babel-loader'
                 }, 
                 {
-                    test: /\.(css)$/,
+                    test: /\.(css|scss)$/,
                     // exclude: /node_modules/,
-                    use: [ miniCssExtractPlugin.loader, 'css-loader' ]
+                    use: [ miniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
                 },
                 {
                     test: /\.(ico)$/,

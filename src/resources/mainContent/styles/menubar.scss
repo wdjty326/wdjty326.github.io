@@ -15,29 +15,33 @@
   line-height: 1em;
   color: #fff;
   transition: background-color .2s linear;
-}
-.MenuItem:hover, .MenuItem.active {
-  background-color: #6666ff;
-}
-.MenuItem.active::before {
-  content: '\00a0';
-  position: absolute;
-  width: .3em;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #66b3ff;
-}
-.MenuItem > a {
-  padding: 1.2em .6em;
-  display: block;
-  text-decoration: none;
-  font-family: 'Sunflower', sans-serif;
-  color: #ffffff;
-  cursor: pointer;
-}
-.MenuItem > a > svg {
-  margin-right: .3em
+
+  &:hover, &.active {
+    background-color: #6666ff;
+  }
+
+  &.active::before, &:hover::before {
+    content: '\00a0';
+    position: absolute;
+    width: .3em;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #66b3ff;
+  }
+
+  a {
+    padding: 1.2em .6em;
+    display: block;
+    text-decoration: none;
+    font-family: 'Sunflower', sans-serif;
+    color: #ffffff;
+    cursor: pointer;
+
+    svg {
+      margin-right: .3em
+    }
+  }
 }
 @media screen and (max-width:1280px), (max-height:800px) {
   .MainMenubar {

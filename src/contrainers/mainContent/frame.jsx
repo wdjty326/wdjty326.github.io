@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import Page from './page';
-import '../../resources/mainContent/styles/Frame.css';
-
 
 const mapStateToProps = state => state.common;
 

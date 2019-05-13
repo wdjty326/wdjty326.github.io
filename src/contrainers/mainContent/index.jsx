@@ -5,8 +5,8 @@ import { HashRouter as Router } from 'react-router-dom';
 import { getMenuList } from '../../store/actions/commonAction';
 import Menubar from './menubar';
 import Frame from './frame';
-import '../../resources/mainContent/styles/mainContent.css';
-import '../../resources/mainContent/styles/Menubar.css';
+import '../../resources/mainContent/styles/mainContent.scss';
+import '../../resources/mainContent/styles/menubar.scss';
 
 const mapDispatchToProps = (dispatch) => ({
   getMenuList:() => dispatch(getMenuList()),

@@ -1,3 +1,10 @@
+.MainContent {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 215px);
+  margin: 0 auto;
+}
+
 .frame {
   position: absolute;
   top: 0;
