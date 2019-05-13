@@ -50,7 +50,8 @@ $homeContentColor: #666666;
       font-size: 4.5em;
       color: $homeContentColor;
       animation: none;
-
+      transform: none;
+      top: 0;
       .prepend {
         position: absolute;
         width: 40px;

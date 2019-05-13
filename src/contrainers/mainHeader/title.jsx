@@ -6,7 +6,7 @@ import React from 'react';
 class MainHeaderTitle extends React.Component {
   render() {
     return (
-      <div className="Title"> {/* 타이틀 */}
+      <div className="title"> {/* 타이틀 */}
         <h1>PortFolio</h1>
       </div>
     );

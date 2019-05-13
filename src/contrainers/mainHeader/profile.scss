@@ -1,67 +1,65 @@
-.Profile {
+.profile {
   position: relative;
   display: inline-block;
   width: 240px;
   animation: moveLeftProfile .5s linear forwards;
+
+  div {
+    display: inline-block;
+  }
+  .info {
+    display: inline-flex;
+    align-content: center;
+
+    .image {
+      width: 64px;
+      height: 85px;
+      background-image: url('../../resources/mainHeader/images/profile_x64.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: opacity .2s linear;
+    }
+
+    .text {
+      padding-left: 18px;
+      font-family: 'Roboto Mono', monospace;
+      color: #6666ff;
+
+      .p:nth-child(1) {
+        font-size: 18px;
+      }
+
+      p:nth-child(2) {
+        font-size: 14px;
+      }
+    }
+  }
+  .buttons {
+    display: block;
+    margin-top: 8px;
+  }
 }
 
-.Profile > div {
-  display: inline-block;
-}
-
-.Profile > .Info {
-  display: inline-flex;
-  align-content: center;
-}
-
-.Profile > .Info > .Image {
-  width: 64px;
-  height: 85px;
-  background-image: url('../images/profile_x64.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  transition: opacity .2s linear;
-}
-
-.Profile > .Info > .Text {
-  padding-left: 18px;
-  font-family: 'Roboto Mono', monospace;
-  color: #6666ff;
-}
-
-.Profile > .Info > .Text > p:nth-child(1) {
-  font-size: 18px;
-}
-
-.Profile > .Info > .Text > p:nth-child(2) {
-  font-size: 14px;
-}
-
-.Profile > .Buttons {
-  display: block;
-  margin-top: 8px;
-}
-
-.Title {
+.title {
   position: relative;
   display: inline-block;
   left: 60px;
   animation: moveRightTitle .5s linear forwards;
-}
 
-.Title > h1 {
-  color: #6666ff;
-  font-family: 'Sunflower', sans-serif;
-}
+  h1 {
+    color: #6666ff;
+    font-family: 'Sunflower', sans-serif;
+  }
 
-.Title::after {
-  content: '\00a0';
-  position: absolute;
-  margin-left: 12px;
-  width: 212px;
-  height: 8px;
-  background-color: #6666ff;
-  opacity: .8;
+  &::after {
+    content: '\00a0';
+    position: absolute;
+    margin-left: 12px;
+    width: 212px;
+    height: 8px;
+    background-color: #6666ff;
+    opacity: .8;
+  }
 }
 
 /* Title 좌측 이동 */
@@ -141,38 +139,41 @@
 }
 
 @media screen and (max-width:1280px) {
-  .Profile {
+  .profile {
     width: 176px;
     animation: moveRightProfile .5s linear forwards;
+    .info {
+      .image {
+        opacity: 0;
+        width: 0;
+      }
+    }
   }
 
-  .Profile > .Info > .Image {
-    opacity: 0;
-    width: 0;
-  }
-
-  .Title {
+  .title {
     left: 30px;
     animation: moveLeftTitle .5s linear forwards;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .Profile {
+  .profile {
     width: 240px;
-    top: 65px;
+    top: 78px;
+    left: 30px;
     animation: none;
-    transform: translateX(calc(100vw - 264px));
+    transform: none;
+    .info {
+      .image {
+        opacity: 1;
+        width: 64px;
+      }
+    }
   }
 
-  .Title {
+  .title {
     animation: none;
-    transform: translateX(-240px);
-    top: -65px
-  }
-
-  .Profile > .Info > .Image {
-    opacity: 1;
-    width: 64px;
+    transform: none;
+    top: -151px
   }
 }

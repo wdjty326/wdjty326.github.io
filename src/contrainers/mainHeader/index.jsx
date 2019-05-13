@@ -10,7 +10,7 @@ class MainHeader extends React.Component {
   render() {
     return (
       <div id="MainHeader"> {/* 메인 */}
-        <div className="Content"> {/* 컨텐츠 */}
+        <div className="content"> {/* 컨텐츠 */}
           <MainHeaderProfile />
           <MainHeaderTitle />
         </div>

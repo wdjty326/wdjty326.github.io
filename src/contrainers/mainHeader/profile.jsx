@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../../resources/mainHeader/styles/profile.css'
+import './profile.scss'
 
 const Button = ({ link, children }) => (
   <div className="BrandButton">
@@ -16,15 +16,15 @@ const Button = ({ link, children }) => (
 class MainHeaderProfile extends React.Component {
   render() {
     return (
-      <div className="Profile"> {/* 프로필 */}
-        <div className="Info">
-          <div className="Image" />
-          <div className="Text">
+      <div className="profile"> {/* 프로필 */}
+        <div className="info">
+          <div className="image" />
+          <div className="text">
             <p>Jeong TaekYu</p>
             <p>FrontEnd Developer</p>
           </div>
         </div>
-        <div className="Buttons">
+        <div className="buttons">
           <Button link="https://www.facebook.com/wdjty?ref=bookmarks">
             <FontAwesomeIcon icon={['fab', 'facebook-f']} />
           </Button>
