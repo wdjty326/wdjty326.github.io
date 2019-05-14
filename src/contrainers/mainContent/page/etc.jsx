@@ -3,8 +3,8 @@ import React from 'react';
 class Etc extends React.Component {
   render() {
     return (
-      <div>
-        Etc
+      <div className="etc">
+        현재 개발중 입니다
       </div>
     )
   }
