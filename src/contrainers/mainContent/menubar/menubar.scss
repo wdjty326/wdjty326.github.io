@@ -5,8 +5,13 @@
   width: 240px;
   background-color: #8080ff;
   box-shadow: 1px 1px 2px #999;
+  opacity: .3;
   z-index: 999;
-  transition: width .2s linear, top .2s linear;
+  transition: width .2s linear, top .2s linear, opacity .2s linear;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 .MenuItem {
   position: relative;
@@ -50,6 +55,7 @@
     left: 0;
     right: 0;
     width: 100%;
+    opacity: 1;
   }
   .MenuItem {
     display: inline-block;

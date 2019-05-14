@@ -21,8 +21,8 @@ ul {
   margin: 0;
 }
 
-.BrandButton {
-  display: inline-flex;
+.brandbutton {
+  display: inline-flex !important;
   margin: 0 6px;
   width: 48px;
   height: 48px;
@@ -35,7 +35,7 @@ ul {
   cursor: pointer;
 }
 
-.BrandButton > a {
+.brandbutton > a {
   font-size: 32px;
   color: #999;
 }

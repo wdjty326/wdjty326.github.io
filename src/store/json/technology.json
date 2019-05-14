@@ -1,0 +1,36 @@
+[
+  {
+    "icon": "leaf",
+    "id": "spring",
+    "title": "SpringFramework",
+    "content": [
+      "a 3 year working experience",
+      "Development of OTP Web Application Management Tool",
+      "Development of WebToApp Linked RestFul API"
+    ]
+  }, {
+    "icon": ["fab", "react"],
+    "id": "react",
+    "title": "React",
+    "content": [
+      "Learn the SPA library React in 2018",
+      "Development of an evaluation using React Life Cycle",
+      "State Management Redux and React-router Libraries"
+    ]
+  }, {
+    "icon": ["fab", "js"],
+    "id": "es6",
+    "title": "ES6",
+    "content": [
+      "Development of asynchronous program using async-await and promise"
+    ]
+  }, {
+    "icon": ["fab", "html5"],
+    "id": "html5",
+    "title": "HTML5",
+    "content": [
+      "Developing a chat function using websocket",
+      "Experience developing web apps with responsive UI libraries"
+    ]
+  }
+]

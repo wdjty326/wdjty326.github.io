@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import Page from './page';
 
 const mapStateToProps = state => state.common;
@@ -32,9 +33,11 @@ class Frame extends React.Component {
   }
 
   render() {
+    const { location, menuId } = this.props;
     const { menuList } = this.state;
     return (
-      <div className="frame">
+      <Switch location={location}>
+        <div className="frame">
         {
           menuList.map((menuInfo, idx) => {
             const { exact, link, component } = menuInfo;
@@ -43,7 +46,8 @@ class Frame extends React.Component {
             )
           })
         }
-      </div>
+        </div>
+      </Switch>
     );
   }
 }

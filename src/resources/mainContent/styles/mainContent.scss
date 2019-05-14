@@ -14,6 +14,21 @@
   height: calc(100% - 32px);
 }
 
+.frame-enter {
+  opacity: 0;
+}
+.frame-enter-active {
+  opacity: 1;
+  transition: opacity .2s;
+}
+.frame-exit {
+  opacity: 1;
+}
+.frame-exit-active {
+  opacity: 0;
+  transition: opacity .2s;
+}
+
 @media screen and (max-width:1280px), (max-height:800px) {
   .frame {
     position: relative;
