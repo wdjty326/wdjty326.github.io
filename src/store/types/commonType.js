@@ -4,3 +4,5 @@ export const GET_MENU_LIST = 'GET_MENU_LIST';
 export const SET_ACTIVE_MENU_ID = 'SET_ACTIVE_MENU_ID';
 // 기술 리스트 가져오기
 export const GET_TECHNOLOGY_LIST = 'GET_TECHNOLOGY_LIST';
+// 프로젝트 리스트 가져오기
+export const GET_PROJECT_LIST = 'GET_PROJECT_LIST';

@@ -65,7 +65,7 @@
 /* Title 좌측 이동 */
 @keyframes moveLeftTitle {
   from {
-    transform: translateX(0px);
+    transform: none;
   }
 
   35% {
@@ -96,7 +96,7 @@
   }
 
   to {
-    transform: translateX(0px);
+    transform: none;
   }
 }
 
@@ -115,14 +115,14 @@
   }
 
   to {
-    transform: translateX(0);
+    transform: none;
   }
 }
 
 /* profile 우측 이동 */
 @keyframes moveRightProfile {
   from {
-    transform: translateX(0px);
+    transform: none;
   }
 
   30% {

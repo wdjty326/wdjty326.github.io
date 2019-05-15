@@ -1,3 +1,29 @@
+%technologyAnimation {
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * .1}s;
+    }
+  }
+}
+
+@keyframes technologyWave {
+  form {
+    transform: translateY(8px);
+  }
+
+  30% {
+    transform: translateY(-5px);
+  }
+
+  65% {
+    transform: translateY(3px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
 .technology {
   width: 100%;
   height: 100%;
@@ -5,30 +31,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  div {
+  > div {
     width: 1000px;
     height: auto;
     display: block;
-    div {
+    > div {
       width: 480px;
       height: 120px;
       margin: 20px 10px;
       display: inline-table;
       border-bottom: 1px solid #999;
       box-shadow: 0.5px 0.3px #666;
-      svg, span {
+      animation: technologyWave .5s ease;
+      @extend %technologyAnimation;
+      > svg, span {
         font-size: 1.5em;
         font-family: 'Sunflower', sans-serif;
         font-weight: bold;
         color: #666666;
       }
-      span {
+      > span {
         padding-left: .3em;
       }
-      ul {
+      > ul {
         line-height: 1.8em;
         padding-inline-start: 20px;
-        li {
+        > li {
           font-family: 'Sunflower', sans-serif;
           font-size: 1.2em;
         }
@@ -37,15 +65,29 @@
   }
 }
 
-@media screen and (max-width:1280px), (max-height:800px) {
+@media screen and (max-width:1280px), (max-height: 800px) {
   .technology {
     height: auto;
-    div {
-      width: 360px;
-      div {
+    > div {
+      width: 720px;
+      > div {
+        animation: none;
+      }
+      > div {
         width: 340px;
         height: 200px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:800px) {
+  .technology {
+    > div {
+      width: 360px;
+      > div {
         display: block;
+        animation: technologyWave .5s ease;
       }
     }
   }
