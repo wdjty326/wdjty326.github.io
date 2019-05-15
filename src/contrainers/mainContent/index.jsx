@@ -22,7 +22,9 @@ class MainContent extends React.Component {
       <Router>
         <Route render={({location, history, match}) => (
           <div className="MainContent">
-            <Menubar />
+            <Menubar
+              location={location}
+            />
             <Frame
               location={location}
               history={history}

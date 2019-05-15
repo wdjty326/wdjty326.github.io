@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as action from '../../../store/actions/commonAction';
 import './technology.scss';
 
-const TechnologyElement = ({icon, title, content}) => (
-  <div>
+const TechnologyElement = ({icon, title, content, style}) => (
+  <div style={style}>
     <FontAwesomeIcon icon={icon} />
     <span>{title}</span>
     <ul>
@@ -33,7 +33,15 @@ class Technology extends React.Component {
       <div className="technology">
         <div>
           {
-            technologyList.map(technology => <TechnologyElement key={technology.id} {...technology} />)
+            technologyList.map((technology, idx) => (
+              <TechnologyElement
+                key={technology.id}
+                style={({
+                  '--element-index': idx + 1,
+                })}
+                {...technology}
+              />
+            ))
           }
         </div>
       </div>

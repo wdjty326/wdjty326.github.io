@@ -1,10 +1,10 @@
-%technologyAnimation {
-  @for $i from 1 through 4 {
-    &:nth-child(#{$i}) {
-      animation-delay: #{$i * .1}s;
-    }
-  }
-}
+// %technologyAnimation {
+//   @for $i from 1 through 4 {
+//     &:nth-child(#{$i}) {
+//       animation-delay: #{$i * .1}s;
+//     }
+//   }
+// }
 
 @keyframes technologyWave {
   form {
@@ -43,7 +43,7 @@
       border-bottom: 1px solid #999;
       box-shadow: 0.5px 0.3px #666;
       animation: technologyWave .5s ease;
-      @extend %technologyAnimation;
+      animation-delay: calc(.1s * var(--element-index, 1));
       > svg, span {
         font-size: 1.5em;
         font-family: 'Sunflower', sans-serif;
@@ -71,9 +71,6 @@
     > div {
       width: 720px;
       > div {
-        animation: none;
-      }
-      > div {
         width: 340px;
         height: 200px;
       }
@@ -87,7 +84,6 @@
       width: 360px;
       > div {
         display: block;
-        animation: technologyWave .5s ease;
       }
     }
   }

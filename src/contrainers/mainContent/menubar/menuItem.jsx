@@ -6,11 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class MenuItem extends React.Component {
   render() {
-    const { id, icon, text, link, exact, active, toggleChangeMenu } = this.props;
+    const { id, icon, text, link, exact, active } = this.props;
     return (
       <li
         className={`MenuItem${(active) ? ' active' : ''}`}
-        onClick={() => toggleChangeMenu(id)}
       >
         <NavLink exact={(exact)} to={link}>
           <FontAwesomeIcon icon={icon} />

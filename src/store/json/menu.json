@@ -4,8 +4,7 @@
     "icon": "home",
     "text": "Main",
     "link": "/",
-    "exact": true,
-    "active": true
+    "exact": true
   }, {
     "id": "Technology",
     "icon": ["fab", "stripe-s"],

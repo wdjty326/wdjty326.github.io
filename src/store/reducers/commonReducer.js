@@ -1,6 +1,5 @@
 import {
   GET_MENU_LIST,
-  SET_ACTIVE_MENU_ID,
   GET_TECHNOLOGY_LIST,
   GET_PROJECT_LIST,
 } from '../types/commonType';
@@ -21,13 +20,6 @@ export default (state = initalState, action) => {
       ...state,
       ...{
         menuList,
-      },
-    };
-    case SET_ACTIVE_MENU_ID:
-    return {
-      ...state,
-      ...{
-        menuId,
       },
     };
     case GET_TECHNOLOGY_LIST:
