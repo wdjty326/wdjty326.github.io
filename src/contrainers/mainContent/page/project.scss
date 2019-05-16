@@ -1,0 +1,75 @@
+.project {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+  > div {
+    width: 600px;
+    height: auto;
+    position: relative;
+    top: 32px;
+    transition: width .2s linear;
+    .list-item, .group-item {
+      display: list-item;
+      list-style-type: none;
+      width: auto;
+      height: 64px;
+      margin: 18px 0;
+      padding: .5em 1.5em;
+      color: #666;
+      border-bottom: 1px solid #ddd;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      border-top-right-radius: 32px;
+      box-shadow: 1px 1px #999;
+      transition: transform .2s linear;
+      > div {
+        display: inline-block;
+        position: relative;
+      }
+      > div:nth-child(1) {
+        font-size: 4em;
+      }
+      > div:nth-child(2) {
+        font-size: 2em;
+        left: 12px;
+        white-space: nowrap;
+        text-overflow:ellipsis;
+        max-width: 480px;
+        overflow: hidden;
+        transition: max-width .2s linear;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .group-item {
+      height: auto;
+      transform: none !important;
+      > div:nth-child(3) {
+        .list-item {
+          > div:nth-child(2) {
+            max-width: 440px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project {
+    > div {
+      width: 360px;
+      > .list-item {
+        > div:nth-child(2) {
+          max-width: 240px;
+        }
+      }
+    }
+  }
+}

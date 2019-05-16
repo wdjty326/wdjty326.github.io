@@ -21,6 +21,10 @@ ul {
   margin: 0;
 }
 
+span {
+  font-family: 'Sunflower', sans-serif;
+}
+
 .brandbutton {
   display: inline-flex !important;
   margin: 0 6px;

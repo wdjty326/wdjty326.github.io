@@ -2,32 +2,46 @@
   {
     "id": "gourp1",
     "groupid": "koreaexpert",
+    "icon": "building",
+    "title": "KoreaExpert Inc.",
     "projects": [
       {
-        "icon": "",
-        "id": "",
-        "title": "",
-        "technology": [],
-        "content": []
+        "icon": ["fab", "java"],
+        "id": 1,
+        "title": "OTP ManagementTool Development",
+        "description": "Developing tools for managing their OTP products Web applications",
+        "technology": [
+          "java", "jsp", "javascript(es5)"
+        ],
+        "content": [
+          "Development of OTP user and service management api with Java Servlet 2.5 environment",
+          "Development of OTP user and service management screen with JSP + JSTL + ES5"
+        ]
       }, {
-        "icon": "",
-        "id": "",
-        "title": "",
-        "technology": [],
-        "content": []
-      }, {
-        "icon": "",
-        "id": "",
-        "title": "",
-        "technology": [],
-        "content": []
+        "icon": ["fab", "java"],
+        "id": 2,
+        "title": "Remote Authentication Program Development",
+        "description": "Development of Remote Authentication Program Using Two-way Communication Between Web and Mobile Devices",
+        "technology": [
+          "java", "jsp", "javascript(es5)", "websocket"
+        ],
+        "content": [
+          "Developing a two-way communication screen with the server using the SockJS-client",
+          "Development of Web app data delivery screen using qrcode.js library"
+        ]
       }
     ]
   }, {
-    "icon": "",
-    "id": "",
-    "title": "",
-    "technology": [],
-    "content": []
+    "icon": ["fab", "react"],
+    "id": "ilgong",
+    "title": "ilgong WebFrontend Development",
+    "description": "Development of Web version of a scheduling program between acquaintances",
+    "technology": [
+      "javascript(es6)", "react", "eslint"
+    ],
+    "content": [
+      "Development of Main Schedule and Friend Management Screen using ES6 based React Library",
+      "Implementing scheduling location using Google Map APIs"
+    ]
   }
 ]

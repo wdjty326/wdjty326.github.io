@@ -12,7 +12,7 @@ const initalState = {
 };
 
 export default (state = initalState, action) => {
-  const { type, menuId, menuList, technologyList, projectList } = action;
+  const { type, menuList, technologyList, projectList } = action;
 
   switch(type) {
     case GET_MENU_LIST:
