@@ -43,7 +43,7 @@
       border-bottom: 1px solid #999;
       box-shadow: 0.5px 0.3px #666;
       animation: technologyWave .5s ease;
-      animation-delay: calc(.1s * var(--element-index, 1));
+      animation-delay: calc(.12s * var(--element-index, 1));
       > svg, span {
         font-size: 1.5em;
         font-family: 'Sunflower', sans-serif;

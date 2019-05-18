@@ -13,9 +13,9 @@
   border-top-right-radius: 32px;
   box-shadow: 1px 1px #999;
   transition: transform .2s linear;
-  &:hover {
-    transform: scale(1.05);
-  }
+  // &:hover {
+  //   transform: scale(1.05);
+  // }
 }
 // 기본 아이템 자식설정
 %defaultItemChildren {
@@ -36,6 +36,26 @@
     transition: max-width .2s linear;
   }
 }
+
+@keyframes openExpansitionItem {
+  from {
+    transform: none;
+  }
+
+  30% {
+    transform: translateY(6px);
+  }
+
+
+  60% {
+    transform: translateY(-2px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
 
 .project {
   width: 100%;
@@ -58,7 +78,7 @@
       height: auto;
       transform: none !important;
       > div:nth-child(3) {
-        .list-item {
+        .list-item, .expansition-item > div:nth-child(1) {
           > div:nth-child(2) {
             max-width: 440px;
           }
@@ -69,6 +89,7 @@
       @extend %defaultItem;
       height: auto;
       transform: none;
+      animation: openExpansitionItem .5s linear backwards;
       > div {
         display: block;
         position: relative;
@@ -81,12 +102,14 @@
 
         > div {
           width: auto;
+          height: auto;
           min-height: 24px;
           font-size: 1.2em;
           padding: 4px 8px;
           border: 1px solid #ddd;
           border-radius: 8px;
-
+          animation: openExpansitionItem .5s linear backwards;
+          animation-delay: calc(.1s * var(--element-index, 1));
           &.technology {
             display: block;
             > span {

@@ -2,8 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // 서브아이템
-const SubItem = ({className, content}) => (
-  <div className={(className) ? className: ''}>
+const SubItem = ({className, style, content}) => (
+  <div className={(className) ? className: ''} style={style}>
     {
       (typeof content === 'string') ? (
         <span>{content}</span>
@@ -44,9 +44,9 @@ class expansionItem extends React.Component {
           </div>
         </div>
         <div>
-          <SubItem content={description} />
-          <SubItem className="technology" content={technology} />
-          <SubItem className="description" content={content} />
+          <SubItem style={{'--element-index': 1}} content={description} />
+          <SubItem style={{'--element-index': 2}} className="technology" content={technology} />
+          <SubItem style={{'--element-index': 3}} className="description" content={content} />
         </div>
       </div>
     )
