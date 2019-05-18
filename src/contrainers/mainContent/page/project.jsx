@@ -31,7 +31,6 @@ class Project extends React.Component {
   render() {
     const { projectList } = this.props;
     const { expansionItemId } = this.state;
-    console.log(projectList);
     return (
       <div className="project">
         {/* 카드뷰 형식 개발 */}
@@ -40,18 +39,19 @@ class Project extends React.Component {
             projectList.map(project => {
               const { groupid, id } = project;
               const itemId = groupid || id;
-              return (expansionItemId === itemId) ? 
+              return (groupid) ? 
+                (
+                <GroupItem
+                  toggleExpansionItem={this.toggleExpansionItem}
+                  expansionItemId={expansionItemId}
+                  {...project}
+                />
+                ) 
+                : (expansionItemId === itemId) ? 
                 (
                 <ExpansionItem
                   toggleExpansionItem={this.toggleExpansionItem}
                   {...project} 
-                />
-                ) 
-                : (groupid) ? 
-                (
-                <GroupItem
-                  toggleExpansionItem={this.toggleExpansionItem}
-                  {...project}
                 />
                 ) : 
                 (

@@ -15,17 +15,17 @@ module.exports = (env, options) => {
         },
         optimization: {
             splitChunks: {
-              cacheGroups: {
-                vendors: {
-                  name: 'vendors',
-                  test: /[\\/]node_modules[\\/]/,
-                  chunks: 'all'
-                },
-                styles: {
-                  name: 'styles',
-                  test: /\.(css)$/,
-                  chunks: 'all',
-                }
+                cacheGroups: {
+                    vendors: {
+                        name: 'vendors',
+                        test: /[\\/]node_modules[\\/]/,
+                        chunks: 'all'
+                    },
+                    styles: {
+                        name: 'styles',
+                        test: /\.(css)$/,
+                        chunks: 'all',
+                    }
                 },
             },
         },
