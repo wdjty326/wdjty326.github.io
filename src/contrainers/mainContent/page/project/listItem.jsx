@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 // 리스트형식 아이템
 class ListItem extends React.Component {
   render() {

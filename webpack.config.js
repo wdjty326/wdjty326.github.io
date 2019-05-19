@@ -4,6 +4,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const uglifyJSWebpackPlugin = require('uglifyjs-webpack-plugin');
+const lodashWebpackPlugin = require('lodash-webpack-plugin');
 
 module.exports = (env, options) => {
     const config = {
@@ -19,7 +20,9 @@ module.exports = (env, options) => {
                     vendors: {
                         name: 'vendors',
                         test: /[\\/]node_modules[\\/]/,
-                        chunks: 'all'
+                        minSize: 50000,
+                        maxSize: 100000,
+                        chunks: 'all',
                     },
                     styles: {
                         name: 'styles',
@@ -119,6 +122,7 @@ module.exports = (env, options) => {
                     PUBLIC_URL: 'https://wdjty326.gibhub.com/',
                     NODE_ENV: 'production',
                 }),
+                new lodashWebpackPlugin(),
             ]
         ];
     }

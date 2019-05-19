@@ -19,7 +19,8 @@
     "id": "Future",
     "icon": "graduation-cap",
     "text": "Future",
-    "link": "/future"
+    "link": "/future",
+    "reversed": true
   }, {
     "id": "Etc",
     "icon": "comments",

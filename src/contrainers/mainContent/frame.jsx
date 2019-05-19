@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import lodash from 'lodash';
 import Page from './page';
 
 const mapStateToProps = state => state.common;
@@ -12,8 +13,15 @@ class Frame extends React.Component {
     this.state = {
       menuList: [],
     };
-
     this.updateMenuList = this.updateMenuList.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { location } = nextProps;
+    const { menuList } = this.state;
+    const { pathname } = location;
+    
+    const root = document.getElementById('root');
   }
 
   updateMenuList(props) {

@@ -1,7 +1,7 @@
 // 메인 컨텐트
 import React from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { getMenuList } from '../../store/actions/commonAction';
 import Menubar from './menubar';
 import Frame from './frame';
@@ -19,20 +19,18 @@ class MainContent extends React.Component {
 
   render() {
     return (
-      <Router>
-        <Route render={({location, history, match}) => (
-          <div className="MainContent">
-            <Menubar
-              location={location}
-            />
-            <Frame
-              location={location}
-              history={history}
-              match={match}
-            />
-          </div>
-        )} />
-      </Router>
+      <Route render={({location, history, match}) => (
+        <div className="MainContent">
+          <Menubar
+            location={location}
+          />
+          <Frame
+            location={location}
+            history={history}
+            match={match}
+          />
+        </div>
+      )} />
     )
   }
 }
