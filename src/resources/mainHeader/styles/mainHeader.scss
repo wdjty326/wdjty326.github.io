@@ -9,25 +9,22 @@
   border-bottom: 1px solid rgb(231, 231, 231);
   align-items: center;
   transition: max-height .2s linear;
-}
 
-#MainHeader > .content {
-  position: relative;
-  display: flex;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  align-items: center;
+  > .content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 480px) {
   #MainHeader {
     max-height: 360px;
-  }
-
-  #MainHeader > .content {
-    display: block;
   }
 }

@@ -2,7 +2,6 @@
   position: relative;
   display: inline-block;
   width: 240px;
-  animation: moveLeftProfile .5s linear forwards;
 
   div {
     display: inline-block;
@@ -44,8 +43,7 @@
   position: relative;
   display: inline-block;
   left: 60px;
-  animation: moveRightTitle .5s linear forwards;
-
+  
   h1 {
     color: #6666ff;
     font-family: 'Sunflower', sans-serif;
@@ -62,86 +60,9 @@
   }
 }
 
-/* Title 좌측 이동 */
-@keyframes moveLeftTitle {
-  from {
-    transform: none;
-  }
-
-  35% {
-    transform: translateX(-191px);
-  }
-
-  65% {
-    transform: translateX(-161px);
-  }
-
-  to {
-    transform: translateX(-176px);
-  }
-}
-
-/* Title 좌측 이동 */
-@keyframes moveRightTitle {
-  from {
-    transform: translateX(-176px);
-  }
-
-  35% {
-    transform: translateX(15px);
-  }
-
-  65% {
-    transform: translateX(-15px);
-  }
-
-  to {
-    transform: none;
-  }
-}
-
-/* profile 좌측 이동 */
-@keyframes moveLeftProfile {
-  from {
-    transform: translateX(calc(100vw - 200px));
-  }
-
-  30% {
-    transform: translateX(-15px);
-  }
-
-  60% {
-    transform: translateX(15px);
-  }
-
-  to {
-    transform: none;
-  }
-}
-
-/* profile 우측 이동 */
-@keyframes moveRightProfile {
-  from {
-    transform: none;
-  }
-
-  30% {
-    transform: translateX(calc(100vw - 185px));
-  }
-
-  60% {
-    transform: translateX(calc(100vw - 215px));
-  }
-
-  to {
-    transform: translateX(calc(100vw - 200px));
-  }
-}
-
 @media screen and (max-width:1280px) {
   .profile {
     width: 176px;
-    animation: moveRightProfile .5s linear forwards;
     .info {
       .image {
         opacity: 0;
@@ -152,28 +73,18 @@
 
   .title {
     left: 30px;
-    animation: moveLeftTitle .5s linear forwards;
   }
 }
 
 @media screen and (max-width: 480px) {
   .profile {
     width: 240px;
-    top: 78px;
     left: 30px;
-    animation: none;
-    transform: none;
     .info {
       .image {
         opacity: 1;
         width: 64px;
       }
     }
-  }
-
-  .title {
-    animation: none;
-    transform: none;
-    top: -151px
   }
 }

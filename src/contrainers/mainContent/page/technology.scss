@@ -14,14 +14,17 @@
   align-items: center;
   justify-content: center;
   > div {
-    width: 1000px;
+    max-width: 1000px;
     height: auto;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     > div {
       width: 480px;
       height: 120px;
       margin: 20px 10px;
-      display: inline-table;
+      display: inline-block;
+      vertical-align: top;
       border-bottom: 1px solid #999;
       box-shadow: 0.5px 0.3px #666;
       > svg, span {
@@ -49,21 +52,9 @@
   .technology {
     height: auto;
     > div {
-      width: 720px;
       > div {
         width: 340px;
         height: 200px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width:800px) {
-  .technology {
-    > div {
-      width: 360px;
-      > div {
-        display: block;
       }
     }
   }

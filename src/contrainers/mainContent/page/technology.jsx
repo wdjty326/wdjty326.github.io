@@ -1,20 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { connect } from 'react-redux'; 
+import Slot from './common/slot';
 import * as action from '../../../store/actions/commonAction';
 import './technology.scss';
-
-const TechnologyElement = ({icon, title, content, style}) => (
-  <div style={style}>
-    <FontAwesomeIcon icon={icon} />
-    <span>{title}</span>
-    <ul>
-    {
-      content.map(text => (<li>{text}</li>))
-    }
-    </ul>
-  </div>
-);
 
 const mapStateToProps = state => state.common;
 const mapDispatchToProps = (dispatch) => ({
@@ -34,7 +22,7 @@ class Technology extends React.Component {
         <div>
           {
             technologyList.map((technology, idx) => (
-              <TechnologyElement
+              <Slot
                 key={technology.id}
                 style={({
                   '--element-index': idx + 1,

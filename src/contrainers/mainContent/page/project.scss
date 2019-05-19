@@ -69,7 +69,6 @@
       @extend %defaultItem;
       height: auto;
       transform: none;
-      animation: openExpansitionItem .5s linear backwards;
       > div {
         display: block;
         position: relative;

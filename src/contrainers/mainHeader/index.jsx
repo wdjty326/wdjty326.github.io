@@ -4,7 +4,7 @@
 import React from 'react';
 import MainHeaderProfile from './profile';
 import MainHeaderTitle from './title';
-import '../../resources/mainHeader/styles/mainHeader.css';
+import '../../resources/mainHeader/styles/mainHeader.scss';
 
 class MainHeader extends React.Component {
   render() {

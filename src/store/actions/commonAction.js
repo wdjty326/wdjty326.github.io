@@ -2,10 +2,12 @@ import {
   GET_MENU_LIST,
   GET_TECHNOLOGY_LIST,
   GET_PROJECT_LIST,
+  GET_FUTURE_LIST,
 } from '../types/commonType';
 import MenuList from '../json/menu.json';
 import TechnologyList from '../json/technology.json';
 import ProjectList from '../json/project.json';
+import FutureList from '../json/future.json';
 
 // 메뉴리스트가져오기 액션
 export const getMenuList = () => ({
@@ -21,4 +23,9 @@ export const getTechnologyList = () => ({
 export const getProejctList = () => ({
   type: GET_PROJECT_LIST,
   projectList: ProjectList,
+});
+
+export const getFutureList = () => ({
+  type: GET_FUTURE_LIST,
+  futureList: FutureList,
 });
