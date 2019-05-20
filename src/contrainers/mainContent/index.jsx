@@ -41,6 +41,20 @@ class MainContent extends React.Component {
     this.props.getMenuList();
   }
 
+  componentDidUpdate() {
+    const { menuList } = this.state;
+    const { location } = this.props;
+
+    const reversedMenu = menuList.filter(menuInfo => 
+      menuInfo.link === location.pathname 
+      && menuInfo.reversed);
+    if (reversedMenu.length > 0) {
+      document.body.style.backgroundColor = '#333333';
+    } else {
+      document.body.style.backgroundColor = '#ffffff';
+    }
+  }
+
   render() {
     const { menuList } = this.state;
     const { location } = this.props;

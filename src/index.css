@@ -6,6 +6,8 @@ html, body, #root {
   margin: 0;
   min-width: 320px;
   min-height: 600px;
+  background: transparent;
+  transition: background-color .2s linear;
 }
 
 p {

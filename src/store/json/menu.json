@@ -25,6 +25,7 @@
     "id": "Etc",
     "icon": "comments",
     "text": "etc",
-    "link": "/etc"
+    "link": "/etc",
+    "reversed": true
   }
 ]
