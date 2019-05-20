@@ -1,6 +1,6 @@
-.MainMenubar {
+#MainNav {
   position: absolute;
-  top: 64px;
+  top: 245px;
   right: 32px;
   width: 240px;
   background-color: #8080ff;
@@ -49,7 +49,7 @@
   }
 }
 @media screen and (max-width:1280px), (max-height:800px) {
-  .MainMenubar {
+  #MainNav {
     position: relative;
     top: 0;
     left: 0;

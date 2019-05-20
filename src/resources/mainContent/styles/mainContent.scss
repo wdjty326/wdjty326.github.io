@@ -1,18 +1,9 @@
-.MainContent {
+#MainContent {
   position: relative;
   width: 100%;
   height: calc(100% - 215px);
   margin: 0 auto;
   background-color: transparent;
-}
-
-.frame {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  min-height: 600px;
-  height: calc(100% - 32px);
 }
 
 .frame-enter {
@@ -30,10 +21,4 @@
 .frame-exit-active {
   opacity: 0;
   transition: opacity .2s;
-}
-
-@media screen and (max-width:1280px), (max-height:800px) {
-  .frame {
-    position: relative;
-  }
 }

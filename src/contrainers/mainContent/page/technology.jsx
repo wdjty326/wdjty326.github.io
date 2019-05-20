@@ -18,21 +18,16 @@ class Technology extends React.Component {
     const { technologyList } = this.props;
 
     return (
-      <div className="technology">
-        <div>
-          {
-            technologyList.map((technology, idx) => (
-              <Slot
-                key={technology.id}
-                style={({
-                  '--element-index': idx + 1,
-                })}
-                {...technology}
-              />
-            ))
-          }
-        </div>
-      </div>
+      <article className="technology">
+        {
+          technologyList.map(technology => (
+            <Slot
+              key={technology.id}
+              {...technology}
+            />
+          ))
+        }
+      </article>
     )
   }
 };

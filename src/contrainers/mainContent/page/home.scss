@@ -9,84 +9,78 @@
 $homeContentColor: #666666;
 
 .home {
-  width: 100%;
-  height: 100%;
-  position: relative;
+  position: absolute;
+  display: block;
+  width: 360px;
+  height: 148px;
+  top: calc(50% - 120px);
+  left: calc(50% - 180px);
 
-  .content {
-    position: absolute;
-    display: block;
-    width: 360px;
-    height: 148px;
-    top: calc(50% - 120px);
-    left: calc(50% - 180px);
+  .progress {
+    position: relative;
+    width: 100%;
+    height: 8px;
+
+    &::before {
+      @extend %progressContent;
+      left: 56px;
+      background-color: #66b3ff;
+    }
+
+    &::after {
+      @extend %progressContent;
+      right: 56px;
+      background-color: #6666ff;
+    }
+  }
   
-    .progress {
-      position: relative;
-      width: 100%;
-      height: 8px;
-
-      &::before {
-        @extend %progressContent;
-        left: 56px;
-        background-color: #66b3ff;
-      }
-
+  .title {
+    position: relative;
+    width: 100%;
+    height: 92px;
+    margin: 12px 0;
+    left: 0;
+    font-family: 'Sunflower', sans-serif;
+    font-weight: bold;
+    font-size: 4.5em;
+    color: $homeContentColor;
+    animation: none;
+    transform: none;
+    top: 0;
+    .prepend {
+      position: absolute;
+      width: 40px;
+      left: 0;
       &::after {
-        @extend %progressContent;
-        right: 56px;
-        background-color: #6666ff;
+        content: '\003C';
+      }
+    }
+    .insert {
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 208px;
+    }
+    .append {
+      position: absolute;
+      width: 72px;
+      right: 0;
+      &::after {
+        content: '\002F\003E';
       }
     }
     
-    .title {
-      position: relative;
-      width: 100%;
-      height: 92px;
-      margin: 12px 0;
-      left: 0;
-      font-family: 'Sunflower', sans-serif;
-      font-weight: bold;
-      font-size: 4.5em;
-      color: $homeContentColor;
-      animation: none;
-      transform: none;
-      top: 0;
-      .prepend {
-        position: absolute;
-        width: 40px;
-        left: 0;
-        &::after {
-          content: '\003C';
-        }
-      }
-      .insert {
-        position: absolute;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        width: 208px;
-      }
-      .append {
-        position: absolute;
-        width: 72px;
-        right: 0;
-        &::after {
-          content: '\002F\003E';
-        }
-      }
-      
-      &::after {
-        content: normal;
-      }
+    &::after {
+      content: normal;
     }
+  }
 
-    .footer {
-      position: relative;
-      width: 100%;
-      text-align: center;
-      font-size: 24px;
-      color: $homeContentColor;
-    }
+  .footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: $homeContentColor;
   }
 }

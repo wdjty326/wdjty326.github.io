@@ -1,7 +1,8 @@
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import MainHeader from './mainHeader';
+import MainNav from './mainNav';
 import MainContent from './mainContent';
 import store from '../store';
 
@@ -10,8 +11,17 @@ class Main extends React.Component {
     return (
       <Router>
         <Provider store={store}>
-          <MainHeader />
-          <MainContent />
+          <Route render={({location}) => (
+            <React.Fragment>
+              <MainHeader />
+              <MainNav
+                location={location}
+              />
+              <MainContent
+                location={location}
+              />
+            </React.Fragment>
+          )} />
         </Provider>
       </Router>
     )

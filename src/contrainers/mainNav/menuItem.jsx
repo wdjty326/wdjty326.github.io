@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class MenuItem extends React.Component {
   render() {
-    const { id, icon, text, link, exact, active } = this.props;
+    const { icon, text, link, exact, active } = this.props;
     return (
       <li
         className={`MenuItem${(active) ? ' active' : ''}`}

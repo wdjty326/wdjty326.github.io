@@ -38,77 +38,76 @@
 }
 
 .project {
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  height: auto;
   display: flex;
-  position: relative;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   justify-content: center;
-
-  > div {
-    width: 600px;
+  top: 32px;
+  transition: width .2s linear;
+  
+  .list-item, .group-item {
+    @extend %defaultItem;
+    @extend %defaultItemChildren;
+  }
+  .group-item {
     height: auto;
-    position: relative;
-    top: 32px;
-    transition: width .2s linear;
-    .list-item, .group-item {
-      @extend %defaultItem;
-      @extend %defaultItemChildren;
-    }
-    .group-item {
-      height: auto;
-      transform: none !important;
-      > div:nth-child(3) {
-        .list-item, .expansition-item > div:nth-child(1) {
-          > div:nth-child(2) {
-            max-width: 440px;
-          }
+    transform: none !important;
+    > div:nth-child(3) {
+      .list-item, .expansition-item > div:nth-child(1) {
+        > div:nth-child(2) {
+          max-width: 440px;
         }
       }
     }
-    .expansition-item {
-      @extend %defaultItem;
-      height: auto;
-      transform: none;
-      > div {
-        display: block;
-        position: relative;
-      }
-      > div:nth-child(1) {
-        @extend %defaultItemChildren;
-      }
-      > div:nth-child(2) {
-        margin: 18px 0;
+  }
+  .expansition-item {
+    @extend %defaultItem;
+    height: auto;
+    transform: none;
+    > div {
+      display: block;
+      position: relative;
+    }
+    > div:nth-child(1) {
+      @extend %defaultItemChildren;
+    }
+    > div:nth-child(2) {
+      margin: 18px 0;
 
-        > div {
-          width: auto;
-          height: auto;
-          min-height: 24px;
-          font-size: 1.2em;
-          padding: 4px 8px;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          &.technology {
-            display: block;
-            > span {
-              display: inline-block;
-              padding: 3px 6px;
-              margin: 3px 6px;
-              border-radius: 3px;
-              background-color: rgba(128, 128, 255, 0.3);
-            }
+      > div {
+        width: auto;
+        height: auto;
+        min-height: 24px;
+        font-size: 1.2em;
+        padding: 4px 8px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        &.technology {
+          display: block;
+          > span {
+            display: inline-block;
+            padding: 3px 6px;
+            margin: 3px 6px;
+            border-radius: 3px;
+            background-color: rgba(128, 128, 255, 0.3);
           }
-          &.description {
-            display: block;
-            > span {
-              display: list-item;
-              margin: 12px 6px;
-              margin-left: 20px;
-              list-style-type: lower-roman;
-            }
+        }
+        &.description {
+          display: block;
+          > span {
+            display: list-item;
+            margin: 12px 6px;
+            margin-left: 20px;
+            list-style-type: lower-roman;
           }
-          & + div {
-            margin-top: 18px;
-          }
+        }
+        & + div {
+          margin-top: 18px;
         }
       }
     }
@@ -117,21 +116,19 @@
 
 @media screen and (max-width: 800px) {
   .project {
-    > div {
-      width: 360px;
-      > .list-item, .expansition-item > div:nth-child(1) {
-        > div:nth-child(2) {
-          max-width: 240px;
-        }
+    width: 360px;
+    > .list-item, .expansition-item > div:nth-child(1) {
+      > div:nth-child(2) {
+        max-width: 240px;
       }
-      .group-item {
-        height: auto;
-        transform: none !important;
-        > div:nth-child(3) {
-          .list-item, .expansition-item > div:nth-child(1) {
-            > div:nth-child(2) {
-              max-width: 200px;
-            }
+    }
+    .group-item {
+      height: auto;
+      transform: none !important;
+      > div:nth-child(3) {
+        .list-item, .expansition-item > div:nth-child(1) {
+          > div:nth-child(2) {
+            max-width: 200px;
           }
         }
       }

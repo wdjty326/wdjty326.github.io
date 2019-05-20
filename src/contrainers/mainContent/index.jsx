@@ -1,12 +1,13 @@
 // 메인 컨텐트
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { getMenuList } from '../../store/actions/commonAction';
-import Menubar from './menubar';
-import Frame from './frame';
+import Page from './page';
 import '../../resources/mainContent/styles/mainContent.scss';
 
+const mapStateToProps = state => state.common;
 const mapDispatchToProps = (dispatch) => ({
   getMenuList:() => dispatch(getMenuList()),
 });
@@ -14,25 +15,59 @@ const mapDispatchToProps = (dispatch) => ({
 class MainContent extends React.Component {
   constructor(props) {
     super(props);
-    props.getMenuList();
+    this.state = {
+      menuList: [],
+    };
+    this.updateMenuList = this.updateMenuList.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.updateMenuList(nextProps);
+  }
+
+  updateMenuList(props) {
+    const { menuList } = props;
+    this.setState({
+      menuList: menuList.map(menuInfo => ({
+        ...menuInfo,
+        ...{
+          component: Page[menuInfo.id],
+        }
+      }))
+    })
+  }
+
+  componentDidMount() {
+    this.props.getMenuList();
   }
 
   render() {
+    const { menuList } = this.state;
+    const { location } = this.props;
     return (
-      <Route render={({location, history, match}) => (
-        <div className="MainContent">
-          <Menubar
-            location={location}
-          />
-          <Frame
-            location={location}
-            history={history}
-            match={match}
-          />
-        </div>
-      )} />
+      <TransitionGroup
+        id="MainContent"
+        component="section"
+      >
+        <CSSTransition
+          key={location.pathname}
+          timeout={500}
+          classNames="frame"
+        >
+          <Switch location={location}>
+          {
+            menuList.map((menuInfo, idx) => {
+              const { exact, link, component } = menuInfo;
+              return (
+                <Route key={idx} exact={(exact)} path={link} component={component} />
+              )
+            })
+          }
+          </Switch>
+        </CSSTransition>
+      </TransitionGroup>
     )
   }
 }
 
-export default connect(null, mapDispatchToProps)(MainContent);
+export default connect(mapStateToProps, mapDispatchToProps)(MainContent);

@@ -17,7 +17,7 @@ class Future extends React.Component {
   render() {
     const { futureList } = this.props;
     return (
-      <div className="future">
+      <article className="future">
         <div>
           <span>I want to be a global developer</span>
         </div>
@@ -26,15 +26,12 @@ class Future extends React.Component {
             futureList.map((future, idx) => (
               <Slot
                 key={idx}
-                style={({
-                  '--element-index': idx + 1,
-                })}
                 {...future}
               />
             ))
           }
         </div>
-      </div>
+      </article>
     )
   }
 }

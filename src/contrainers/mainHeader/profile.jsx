@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './profile.scss'
 
 const Button = ({ link, children }) => (
-  <div className="BrandButton">
+  <button className="BrandButton">
     <a href={link}>
       {children}
     </a>
-  </div>
+  </button>
 );
 
 class MainHeaderProfile extends React.Component {

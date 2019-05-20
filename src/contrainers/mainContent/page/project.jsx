@@ -32,37 +32,35 @@ class Project extends React.Component {
     const { projectList } = this.props;
     const { expansionItemId } = this.state;
     return (
-      <div className="project">
+      <article className="project">
         {/* 카드뷰 형식 개발 */}
-        <div>
-          {
-            projectList.map(project => {
-              const { groupid, id } = project;
-              const itemId = groupid || id;
-              return (groupid) ? 
-                (
-                <GroupItem
-                  toggleExpansionItem={this.toggleExpansionItem}
-                  expansionItemId={expansionItemId}
-                  {...project}
-                />
-                ) 
-                : (expansionItemId === itemId) ? 
-                (
-                <ExpansionItem
-                  toggleExpansionItem={this.toggleExpansionItem}
-                  {...project} 
-                />
-                ) : 
-                (
-                <ListItem
-                  toggleExpansionItem={this.toggleExpansionItem}
-                  {...project}
-                />);
-            })
-          }
-        </div>
-      </div>
+        {
+          projectList.map(project => {
+            const { groupid, id } = project;
+            const itemId = groupid || id;
+            return (groupid) ? 
+              (
+              <GroupItem
+                toggleExpansionItem={this.toggleExpansionItem}
+                expansionItemId={expansionItemId}
+                {...project}
+              />
+              ) 
+              : (expansionItemId === itemId) ? 
+              (
+              <ExpansionItem
+                toggleExpansionItem={this.toggleExpansionItem}
+                {...project} 
+              />
+              ) : 
+              (
+              <ListItem
+                toggleExpansionItem={this.toggleExpansionItem}
+                {...project}
+              />);
+          })
+        }
+      </article>
     )
   }
 };

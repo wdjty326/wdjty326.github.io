@@ -9,12 +9,12 @@ import '../../resources/mainHeader/styles/mainHeader.scss';
 class MainHeader extends React.Component {
   render() {
     return (
-      <div id="MainHeader"> {/* 메인 */}
-        <div className="content"> {/* 컨텐츠 */}
+      <header id="MainHeader">
+        <div className="content">
           <MainHeaderProfile />
           <MainHeaderTitle />
         </div>
-      </div>
+      </header>
     );
   }
 }
