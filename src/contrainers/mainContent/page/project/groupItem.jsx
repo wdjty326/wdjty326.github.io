@@ -1,13 +1,13 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ListItem from './listItem';
 import ExpansitionItem from './expansionItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // 그룹형식 아이템
 class GroupItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expansitionItemId: null,
+      expansionItemId: null,
     };
 
     this.toggleExpansionItem = this.toggleExpansionItem.bind(this);
@@ -18,14 +18,14 @@ class GroupItem extends React.Component {
     const { expansionItemId, groupid } = nextProps;
     if (expansionItemId !== groupid) {
       this.setState({
-        expansitionItemId: null
+        expansionItemId: null
       });
     }    
   }
 
   toggleExpansionItem(itemId) {
     this.setState({
-      expansitionItemId: itemId
+      expansionItemId: itemId
     });
   }
 
@@ -37,7 +37,7 @@ class GroupItem extends React.Component {
       toggleExpansionItem,
       groupid,
     } = this.props;
-    const { expansitionItemId } = this.state;
+    const { expansionItemId } = this.state;
     return (
       <div
         className="group-item"
@@ -54,18 +54,16 @@ class GroupItem extends React.Component {
           {
             projects.map(project => {
               const { id } = project;
-              return (
-                (expansitionItemId === id) ? (
-                  <ExpansitionItem
-                    {...project}
-                    toggleExpansionItem={this.toggleExpansionItem}
-                  />
-                ) : (
-                  <ListItem
-                    {...project}
-                    toggleExpansionItem={this.toggleExpansionItem}
-                  /> 
-                )
+              return (expansionItemId === id) ? (
+                <ExpansitionItem
+                  {...project}
+                  toggleExpansionItem={this.toggleExpansionItem}
+                />
+              ) : (
+                <ListItem
+                  {...project}
+                  toggleExpansionItem={this.toggleExpansionItem}
+                /> 
               );
             })
           }

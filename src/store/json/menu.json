@@ -21,11 +21,5 @@
     "text": "Future",
     "link": "/future",
     "reversed": true
-  }, {
-    "id": "Etc",
-    "icon": "comments",
-    "text": "etc",
-    "link": "/etc",
-    "reversed": true
   }
 ]

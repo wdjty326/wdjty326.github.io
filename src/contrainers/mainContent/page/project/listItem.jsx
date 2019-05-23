@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimateItem from './animateItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // 리스트형식 아이템
@@ -11,7 +12,7 @@ class ListItem extends React.Component {
       toggleExpansionItem,
     } = this.props;
     return (
-      <div
+      <AnimateItem
         className="list-item"
         role="presentation"
         onClick={() => toggleExpansionItem(id)}
@@ -22,7 +23,7 @@ class ListItem extends React.Component {
         <div>{  /* 타이틀 */  }
           <span>{title}</span>
         </div>
-      </div>
+      </AnimateItem>
     )
   }
 }

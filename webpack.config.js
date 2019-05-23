@@ -102,7 +102,7 @@ module.exports = (env, options) => {
             ]
         ];
         config.devServer = {
-            port: 3000,
+            port: 3003,
             contentBase: path.resolve(__dirname, 'public'),
             compress: true,
             watchContentBase: true,

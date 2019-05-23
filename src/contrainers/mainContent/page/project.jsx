@@ -39,25 +39,25 @@ class Project extends React.Component {
             const { groupid, id } = project;
             const itemId = groupid || id;
             return (groupid) ? 
-              (
-              <GroupItem
-                toggleExpansionItem={this.toggleExpansionItem}
-                expansionItemId={expansionItemId}
-                {...project}
-              />
-              ) 
-              : (expansionItemId === itemId) ? 
-              (
-              <ExpansionItem
-                toggleExpansionItem={this.toggleExpansionItem}
-                {...project} 
-              />
-              ) : 
-              (
-              <ListItem
-                toggleExpansionItem={this.toggleExpansionItem}
-                {...project}
-              />);
+            (
+            <GroupItem
+              toggleExpansionItem={this.toggleExpansionItem}
+              expansionItemId={expansionItemId}
+              {...project}
+            />
+            ) 
+            : (expansionItemId === itemId) ? 
+            (
+            <ExpansionItem
+              toggleExpansionItem={this.toggleExpansionItem}
+              {...project}
+            />
+            ) : 
+            (
+            <ListItem
+              toggleExpansionItem={this.toggleExpansionItem}
+              {...project}
+            />);
           })
         }
       </article>
