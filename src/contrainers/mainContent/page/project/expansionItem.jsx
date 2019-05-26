@@ -1,5 +1,4 @@
 import React from 'react';
-import AnimateItem from './animateItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // 서브아이템
@@ -26,14 +25,9 @@ class expansionItem extends React.Component {
       description,
       technology,
       content,
-      toggleExpansionItem,
     } = this.props;
     return (
-      <AnimateItem
-        className="expansition-item"
-        role="presentation"
-        onClick={() => toggleExpansionItem(null)}
-      >
+      <React.Fragment>
         <div>
           <div>
             <FontAwesomeIcon icon={icon} />
@@ -49,7 +43,7 @@ class expansionItem extends React.Component {
           <SubItem className="technology" content={technology} />
           <SubItem className="description" content={content} />
         </div>
-      </AnimateItem>
+      </React.Fragment>
     )
   }
 }

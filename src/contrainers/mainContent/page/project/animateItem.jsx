@@ -1,56 +1,67 @@
 import React from 'react';
+import ListItem from './listItem';
+import ExpansionItem from './expansionItem';
 
+const ITEM_PADDING = 16;
 export default (() => {
-  return (() => {
-    let scrollHeight = 0;
-    const style = {
-      overflow: 'hidden',
-      transition: 'height .3s ease-in'
-    };
-    return class AnimateItem extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {
-          style,
-        };
-        this.animateItemRef = React.createRef();
-        this.updateScrollHeight = this.updateScrollHeight.bind(this);
+  return class AnimateItem extends React.Component {
+    constructor(props) {
+      super(props);
+      this.expandHeight = 0;
+      this.animateItemRef = React.createRef();
+    }
+
+    componentDidMount() {
+      const { scrollHeight } = this.animateItemRef.current;
+      if (this.expandHeight === 0) {
+        this.expandHeight = scrollHeight - ITEM_PADDING;
       }
-      componentDidMount() {
-        console.log(scrollHeight);
-        this.setState({
-          style: this.updateScrollHeight(),
-        }, () => {
-          const { current } = this.animateItemRef;
-          scrollHeight = current.scrollHeight;
-          this.setState({
-            style: this.updateScrollHeight(),
-          });
-  
-          setTimeout(() => {
-            this.setState({
-              style
-            });
-          }, 300)
-        });
+    }
+
+    componentDidUpdate() {
+      const { isExpansion } = this.props;
+      const { current } = this.animateItemRef;
+      const { scrollHeight } = current;
+      const styleHeight = `height:${(isExpansion) ? scrollHeight - ITEM_PADDING : this.expandHeight}`;
+      const shakeAnimate = `animation:${(isExpansion) ? 'shake' : 'shake-reverse'} .5s`;
+      if (isExpansion) {
+        current.style = `${styleHeight};animation:none;`;
+      } else {
+        current.style = `${styleHeight};animation:none;`;
       }
-  
-      updateScrollHeight() {
-        const { current } = this.animateItemRef;
-        const { style } = this.state;
-        scrollHeight = (scrollHeight) ? scrollHeight : current.scrollHeight;
-        return { ...style, ...{ height: scrollHeight }};
-      }
-  
-      render() {
-        const { style } = this.state;
-        return (
-          <div
-            ref={this.animateItemRef}
-            {...this.props}
-          />
-        )
-      }
-    };
-  })();
+      
+      setTimeout(() => {
+        current.style = `${styleHeight};${shakeAnimate};`;
+      }, 300);
+    }
+    
+    render() {
+      const {
+        id,
+        isExpansion,
+        toggleExpansionItem,
+      } = this.props;
+      return (
+        <div
+          className={isExpansion ? "expansion-item" : "list-item"}
+          role="presentation"
+          ref={this.animateItemRef}
+          onClick={() => toggleExpansionItem(isExpansion ? null : id)}
+        >
+          {
+            (isExpansion) ? 
+            (
+              <ExpansionItem
+                {...this.props}
+              />
+            ) : (
+              <ListItem
+                {...this.props}
+              />
+            )
+          }
+        </div>
+      )
+    }
+  };
 })();

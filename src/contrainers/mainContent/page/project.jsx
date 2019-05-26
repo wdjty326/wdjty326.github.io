@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as action from '../../../store/actions/commonAction';
-import ListItem from './project/listItem';
-import ExpansionItem from './project/expansionItem';
+import AnimateItem from './project/animateItem';
 import GroupItem from './project/groupItem';
 import './project.scss';
 
@@ -45,19 +44,14 @@ class Project extends React.Component {
               expansionItemId={expansionItemId}
               {...project}
             />
+            ) : (
+              <AnimateItem
+                {...project}
+                isExpansion={expansionItemId === itemId}
+                toggleExpansionItem={this.toggleExpansionItem}
+              />
             ) 
-            : (expansionItemId === itemId) ? 
-            (
-            <ExpansionItem
-              toggleExpansionItem={this.toggleExpansionItem}
-              {...project}
-            />
-            ) : 
-            (
-            <ListItem
-              toggleExpansionItem={this.toggleExpansionItem}
-              {...project}
-            />);
+            ;
           })
         }
       </article>

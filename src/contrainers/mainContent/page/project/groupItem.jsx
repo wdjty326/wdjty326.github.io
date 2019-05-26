@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ListItem from './listItem';
-import ExpansitionItem from './expansionItem';
+import AnimateItem from './animateItem';
 // 그룹형식 아이템
 class GroupItem extends React.Component {
   constructor(props) {
@@ -54,16 +53,12 @@ class GroupItem extends React.Component {
           {
             projects.map(project => {
               const { id } = project;
-              return (expansionItemId === id) ? (
-                <ExpansitionItem
+              return (
+                <AnimateItem
                   {...project}
+                  isExpansion={expansionItemId === id}
                   toggleExpansionItem={this.toggleExpansionItem}
                 />
-              ) : (
-                <ListItem
-                  {...project}
-                  toggleExpansionItem={this.toggleExpansionItem}
-                /> 
               );
             })
           }

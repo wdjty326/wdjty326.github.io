@@ -5,19 +5,14 @@
   width: auto;
   height: 64px;
   overflow: hidden;
-  max-height: none;
   margin: 18px 0;
-  padding: .5em 1.5em;
+  padding: 8px 24px;
   color: #666;
-  border-bottom: 1px solid #ddd;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
   border-top-right-radius: 32px;
-  box-shadow: 1px 1px #999;
-  transition: transform .2s linear, max-height .4s ease-out;
-  // &:hover {
-  //   transform: scale(1.05);
-  // }
+  box-shadow: .5px .5px #999;
+  transition: transform .2s, height .3s;
 }
 // 기본 아이템 자식설정
 %defaultItemChildren {
@@ -34,8 +29,36 @@
     white-space: nowrap;
     text-overflow:ellipsis;
     max-width: 480px;
+    padding-right: 26px;
     overflow: hidden;
-    transition: max-width .2s linear;
+  }
+}
+
+@keyframes shake {
+  from {
+    transform: none;
+  }
+
+  35% {
+    transform: translateY(8px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes shake-reverse {
+  from {
+    transform: none;
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  to {
+    transform: none;
   }
 }
 
@@ -57,20 +80,19 @@
   }
   .group-item {
     height: auto;
-    max-height: none;
     transform: none !important;
     > div:nth-child(3) {
-      .list-item, .expansition-item > div:nth-child(1) {
+      .list-item, .expansion-item > div:nth-child(1) {
         > div:nth-child(2) {
           max-width: 440px;
+          padding-right: 16px;
         }
       }
     }
   }
-  .expansition-item {
+  .expansion-item {
     @extend %defaultItem;
     transform: none;
-    height: auto;
     > div {
       display: inline-block;
       position: relative;
@@ -84,10 +106,12 @@
         width: auto;
         height: auto;
         min-height: 24px;
+        top: 0;
         font-size: 1.2em;
         padding: 4px 8px;
         border: 1px solid #ddd;
         border-radius: 8px;
+        animation: shake 1s;
         &.technology {
           display: block;
           > span {
@@ -111,6 +135,12 @@
           margin-top: 18px;
         }
       }
+      > div:nth-child(1) {
+        animation-delay: .14s;
+      }
+      > div:nth-child(2) {
+        animation-delay: .07s;
+      }
     }
   }
 }
@@ -118,7 +148,7 @@
 @media screen and (max-width: 800px) {
   .project {
     width: 360px;
-    > .list-item, .expansition-item > div:nth-child(1) {
+    > .list-item, .expansion-item > div:nth-child(1) {
       > div:nth-child(2) {
         max-width: 240px;
       }
@@ -127,7 +157,7 @@
       height: auto;
       transform: none !important;
       > div:nth-child(3) {
-        .list-item, .expansition-item > div:nth-child(1) {
+        .list-item, .expansion-item > div:nth-child(1) {
           > div:nth-child(2) {
             max-width: 200px;
           }
