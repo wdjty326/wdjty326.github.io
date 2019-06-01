@@ -23,15 +23,10 @@ export default (() => {
       const { current } = this.animateItemRef;
       const { scrollHeight } = current;
       const styleHeight = `height:${(isExpansion) ? scrollHeight - ITEM_PADDING : this.expandHeight}`;
-      const shakeAnimate = `animation:${(isExpansion) ? 'shake' : 'shake-reverse'} .5s`;
-      if (isExpansion) {
-        current.style = `${styleHeight};animation:none;`;
-      } else {
-        current.style = `${styleHeight};animation:none;`;
-      }
+      current.style = `${styleHeight}`;
       
       setTimeout(() => {
-        current.style = `${styleHeight};${shakeAnimate};`;
+        current.style = `${styleHeight}`;
       }, 300);
     }
     

@@ -1,9 +1,4 @@
 import React from 'react';
-// import Home from './home';
-// import Technology from './technology';
-// import Project from './project';
-// import Future from './future';
-// import Etc from './etc';
 
 class DynamicImport extends React.Component {
   constructor(props) {

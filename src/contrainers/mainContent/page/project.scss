@@ -34,34 +34,6 @@
   }
 }
 
-@keyframes shake {
-  from {
-    transform: none;
-  }
-
-  35% {
-    transform: translateY(8px);
-  }
-
-  to {
-    transform: none;
-  }
-}
-
-@keyframes shake-reverse {
-  from {
-    transform: none;
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-
-  to {
-    transform: none;
-  }
-}
-
 .project {
   width: 600px;
   height: auto;
@@ -111,7 +83,6 @@
         padding: 4px 8px;
         border: 1px solid #ddd;
         border-radius: 8px;
-        animation: shake 1s;
         &.technology {
           display: block;
           > span {
@@ -134,12 +105,6 @@
         & + div {
           margin-top: 18px;
         }
-      }
-      > div:nth-child(1) {
-        animation-delay: .14s;
-      }
-      > div:nth-child(2) {
-        animation-delay: .07s;
       }
     }
   }
