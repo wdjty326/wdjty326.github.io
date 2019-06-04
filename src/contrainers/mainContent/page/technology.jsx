@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'; 
 import Slot from './common/slot';
 import * as action from '../../../store/actions/commonAction';
-import './technology.scss';
+import '../../../resources/mainContent/styles/page/technology.scss';
 
 const mapStateToProps = state => state.common;
 const mapDispatchToProps = (dispatch) => ({

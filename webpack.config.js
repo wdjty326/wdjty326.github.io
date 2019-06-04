@@ -20,8 +20,6 @@ module.exports = (env, options) => {
                     vendors: {
                         name: 'vendors',
                         test: /[\\/]node_modules[\\/]/,
-                        minSize: 50000,
-                        maxSize: 100000,
                         chunks: 'all',
                     },
                     styles: {

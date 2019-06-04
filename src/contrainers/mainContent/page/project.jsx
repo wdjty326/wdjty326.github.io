@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as action from '../../../store/actions/commonAction';
 import AnimateItem from './project/animateItem';
 import GroupItem from './project/groupItem';
-import './project.scss';
+import '../../../resources/mainContent/styles/page/project.scss';
 
 const mapStateToProps = state => state.common;
 const mapDispathToProps = (dispatch) => ({

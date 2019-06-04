@@ -1,5 +1,5 @@
 import React from 'react';
-import './future.scss';
+import '../../../resources/mainContent/styles/page/future.scss';
 
 class Future extends React.Component {
   constructor(props) {

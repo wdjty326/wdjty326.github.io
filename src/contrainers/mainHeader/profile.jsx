@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './profile.scss'
+import '../../resources/mainHeader/styles/profile.scss'
 
 const Button = ({ link, children }) => (
   <button className="BrandButton">
