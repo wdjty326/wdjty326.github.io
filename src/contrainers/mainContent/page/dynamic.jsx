@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
-export class DynamicImport extends React.Component {
+export class DynamicImport extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      component: null
+      Component: null,
     };
   }
-  componentDidMount () {
-    this.props.load()
-      .then((component) => {
-        this.setState(() => ({
-          component: component.default ? component.default : component
-        }))
-      })
+
+  componentDidMount() {
+    const { load } = this.props;
+    load().then((Component) => {
+      this.setState(() => ({
+        Component: Component.default ? Component.default : Component,
+      }));
+    });
   }
+
   render() {
-    return this.props.children(this.state.component)
+    const { Component } = this.state;
+    return (Component === null)
+      ? <Loading />
+      : <Component {...this.props} />;
   }
 }
+
+DynamicImport.propTypes = {
+  load: PropTypes.instanceOf(Promise),
+  // children: PropTypes.node,
+};
+
+DynamicImport.defaultProps = {
+  load: new Promise(() => {}),
+  // children: <div />,
+};
 
 export const Loading = () => (
   <div id="loading">

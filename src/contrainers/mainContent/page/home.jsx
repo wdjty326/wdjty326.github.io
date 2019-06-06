@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import '../../../resources/mainContent/styles/page/home.scss';
 
-class Home extends React.Component {
+class Home extends PureComponent {
   render() {
     return (
       <article className="home">
@@ -14,10 +14,10 @@ class Home extends React.Component {
           <span className="append" />
         </div>
         <div className="footer">
-          <span>I'm FrontEnd Developer</span>
+          <span>I&#39;m FrontEnd Developer</span>
         </div>
       </article>
-    )
+    );
   }
 }
 

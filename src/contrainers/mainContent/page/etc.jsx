@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 
-class Etc extends React.Component {
+class Etc extends PureComponent {
   render() {
     return (
       <article className="etc" />
-    )
+    );
   }
 }
 

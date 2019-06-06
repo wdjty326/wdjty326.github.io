@@ -1,11 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Slot from './common/slot';
 import * as action from '../../../store/actions/commonAction';
 import '../../../resources/mainContent/styles/page/technology.scss';
 
 const mapStateToProps = state => state.common;
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   getTechnologyList: () => dispatch(action.getTechnologyList()),
 });
 class Technology extends React.Component {
@@ -28,8 +29,18 @@ class Technology extends React.Component {
           ))
         }
       </article>
-    )
+    );
   }
+}
+
+Technology.propTypes = {
+  technologyList: PropTypes.arrayOf(Object),
+  getTechnologyList: PropTypes.func,
+};
+
+Technology.defaultProps = {
+  technologyList: [],
+  getTechnologyList: () => {},
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Technology);
