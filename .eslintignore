@@ -1,1 +1,8 @@
+## module ##
 /node_modules/**
+
+## project setting infomation ##
+webpack.config.js
+package.json
+package-lock.json
+.eslintrc
