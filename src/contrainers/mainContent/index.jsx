@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { getMenuList } from '../../store/actions/commonAction';
+import * as action from '../../store/actions/commonAction';
 import Page from './page';
 import '../../resources/mainContent/styles/mainContent.scss';
 
 const mapStateToProps = state => state.common;
 const mapDispatchToProps = dispatch => ({
-  getMenuList: () => dispatch(getMenuList()),
+  getMenuList: () => dispatch(action.getMenuList()),
 });
 
 class MainContent extends React.Component {
@@ -23,7 +23,8 @@ class MainContent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getMenuList();
+    const { getMenuList } = this.props;
+    getMenuList();
   }
 
   componentWillReceiveProps(nextProps) {

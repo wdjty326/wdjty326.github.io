@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import MainHeader from './mainHeader';
@@ -6,12 +6,12 @@ import MainNav from './mainNav';
 import MainContent from './mainContent';
 import store from '../store';
 
-class Main extends React.Component {
+class Main extends PureComponent {
   render() {
     return (
       <Router>
         <Provider store={store}>
-          <Route render={({location}) => (
+          <Route render={({ location }) => (
             <React.Fragment>
               <MainHeader />
               <MainNav
@@ -21,10 +21,11 @@ class Main extends React.Component {
                 location={location}
               />
             </React.Fragment>
-          )} />
+          )}
+          />
         </Provider>
       </Router>
-    )
+    );
   }
 }
 

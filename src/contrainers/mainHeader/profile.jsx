@@ -1,22 +1,34 @@
 /**
  * 메인헤더 프로필
  */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../../resources/mainHeader/styles/profile.scss'
+import PropTypes from 'prop-types';
+import '../../resources/mainHeader/styles/profile.scss';
 
 const Button = ({ link, children }) => (
-  <button className="BrandButton">
+  <button type="button" className="BrandButton">
     <a href={link}>
       {children}
     </a>
   </button>
 );
 
-class MainHeaderProfile extends React.Component {
+Button.propTypes = {
+  link: PropTypes.string,
+  children: PropTypes.node,
+};
+
+Button.defaultProps = {
+  link: '',
+  children: <div />,
+};
+
+class MainHeaderProfile extends PureComponent {
   render() {
     return (
-      <div className="profile"> {/* 프로필 */}
+      <div className="profile">
+        {/* 프로필 */}
         <div className="info">
           <div className="image" />
           <div className="text">

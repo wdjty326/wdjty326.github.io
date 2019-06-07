@@ -1,12 +1,13 @@
 /**
  * 메인헤더 타이틀
  */
-import React from 'react';
+import React, { PureComponent } from 'react';
 
-class MainHeaderTitle extends React.Component {
+class MainHeaderTitle extends PureComponent {
   render() {
     return (
-      <div className="title"> {/* 타이틀 */}
+      <div className="title">
+        {/* 타이틀 */}
         <h1>PortFolio</h1>
       </div>
     );
