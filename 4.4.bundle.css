@@ -1,0 +1,64 @@
+.home .progress::before, .home .progress::after {
+  content: '\00a0';
+  position: absolute;
+  width: 120px;
+  height: 8px;
+  border-radius: 4px; }
+
+.home {
+  position: absolute;
+  display: block;
+  width: 360px;
+  height: 148px;
+  top: calc(50% - 120px);
+  left: calc(50% - 180px); }
+  .home .progress {
+    position: relative;
+    width: 100%;
+    height: 8px; }
+    .home .progress::before {
+      left: 56px;
+      background-color: #66b3ff; }
+    .home .progress::after {
+      right: 56px;
+      background-color: #6666ff; }
+  .home .title {
+    position: relative;
+    width: 100%;
+    height: 92px;
+    margin: 12px 0;
+    left: 0;
+    font-family: 'Sunflower', sans-serif;
+    font-weight: bold;
+    font-size: 4.5em;
+    color: #666666;
+    animation: none;
+    transform: none;
+    top: 0; }
+    .home .title .prepend {
+      position: absolute;
+      width: 40px;
+      left: 0; }
+      .home .title .prepend::after {
+        content: '\003C'; }
+    .home .title .insert {
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 208px; }
+    .home .title .append {
+      position: absolute;
+      width: 72px;
+      right: 0; }
+      .home .title .append::after {
+        content: '\002F\003E'; }
+    .home .title::after {
+      content: normal; }
+  .home .footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: #666666; }
+
