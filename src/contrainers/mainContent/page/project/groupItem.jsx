@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import AnimateItem from './animateItem';
+
 // 그룹형식 아이템
 class GroupItem extends React.Component {
   constructor(props) {
@@ -17,14 +19,14 @@ class GroupItem extends React.Component {
     const { expansionItemId, groupid } = nextProps;
     if (expansionItemId !== groupid) {
       this.setState({
-        expansionItemId: null
+        expansionItemId: null,
       });
-    }    
+    }
   }
 
   toggleExpansionItem(itemId) {
     this.setState({
-      expansionItemId: itemId
+      expansionItemId: itemId,
     });
   }
 
@@ -43,15 +45,17 @@ class GroupItem extends React.Component {
         role="presentation"
         onClick={() => toggleExpansionItem(groupid)}
       >
-        <div>{/* 이미지 */}
+        <div>
+          {/* 이미지 */}
           <FontAwesomeIcon icon={icon} />
         </div>
-        <div>{ /* 타이틀 */ }
+        <div>
+          {/* 타이틀 */}
           <span>{title}</span>
         </div>
         <div>
           {
-            projects.map(project => {
+            projects.map((project) => {
               const { id } = project;
               return (
                 <AnimateItem
@@ -64,8 +68,26 @@ class GroupItem extends React.Component {
           }
         </div>
       </div>
-    )
+    );
   }
 }
+
+GroupItem.propTypes = {
+  expansionItemId: PropTypes.string,
+  groupid: PropTypes.string,
+  icon: PropTypes.objectOf(Object),
+  title: PropTypes.string,
+  projects: PropTypes.arrayOf(PropTypes.string),
+  toggleExpansionItem: PropTypes.func,
+};
+
+GroupItem.defaultProps = {
+  expansionItemId: '',
+  groupid: '',
+  icon: null,
+  title: '',
+  projects: [],
+  toggleExpansionItem: () => {},
+};
 
 export default GroupItem;

@@ -1,51 +1,51 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ListItem from './listItem';
 import ExpansionItem from './expansionItem';
 
 const ITEM_PADDING = 16;
-export default (() => {
-  return class AnimateItem extends React.Component {
-    constructor(props) {
-      super(props);
-      this.expandHeight = 0;
-      this.animateItemRef = React.createRef();
-    }
+export default class AnimateItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.expandHeight = 0;
+    this.animateItemRef = React.createRef();
+  }
 
-    componentDidMount() {
-      const { scrollHeight } = this.animateItemRef.current;
-      if (this.expandHeight === 0) {
-        this.expandHeight = scrollHeight - ITEM_PADDING;
-      }
+  componentDidMount() {
+    const { scrollHeight } = this.animateItemRef.current;
+    if (this.expandHeight === 0) {
+      this.expandHeight = scrollHeight - ITEM_PADDING;
     }
+  }
 
-    componentDidUpdate() {
-      const { isExpansion } = this.props;
-      const { current } = this.animateItemRef;
-      const { scrollHeight } = current;
-      const styleHeight = `height:${(isExpansion) ? scrollHeight - ITEM_PADDING : this.expandHeight}`;
+  componentDidUpdate() {
+    const { isExpansion } = this.props;
+    const { current } = this.animateItemRef;
+    const { scrollHeight } = current;
+    const styleHeight = `height:${(isExpansion) ? scrollHeight - ITEM_PADDING : this.expandHeight}`;
+    current.style = `${styleHeight}`;
+
+    setTimeout(() => {
       current.style = `${styleHeight}`;
-      
-      setTimeout(() => {
-        current.style = `${styleHeight}`;
-      }, 300);
-    }
-    
-    render() {
-      const {
-        id,
-        isExpansion,
-        toggleExpansionItem,
-      } = this.props;
-      return (
-        <div
-          className={isExpansion ? "expansion-item" : "list-item"}
-          role="presentation"
-          ref={this.animateItemRef}
-          onClick={() => toggleExpansionItem(isExpansion ? null : id)}
-        >
-          {
-            (isExpansion) ? 
-            (
+    }, 300);
+  }
+
+  render() {
+    const {
+      id,
+      isExpansion,
+      toggleExpansionItem,
+    } = this.props;
+    return (
+      <div
+        className={isExpansion ? 'expansion-item' : 'list-item'}
+        role="presentation"
+        ref={this.animateItemRef}
+        onClick={() => toggleExpansionItem(isExpansion ? null : id)}
+      >
+        {
+          (isExpansion)
+            ? (
               <ExpansionItem
                 {...this.props}
               />
@@ -54,9 +54,20 @@ export default (() => {
                 {...this.props}
               />
             )
-          }
-        </div>
-      )
-    }
-  };
-})();
+        }
+      </div>
+    );
+  }
+}
+
+AnimateItem.propTypes = {
+  id: PropTypes.string,
+  isExpansion: PropTypes.bool,
+  toggleExpansionItem: PropTypes.string,
+};
+
+AnimateItem.defaultProps = {
+  id: '',
+  isExpansion: true,
+  toggleExpansionItem: '',
+};
