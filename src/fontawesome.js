@@ -1,6 +1,21 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faDesktop, faComments, faGraduationCap, faLeaf, faBuilding } from '@fortawesome/free-solid-svg-icons';
-import { faStripeS, faFacebookF, faGithub, faJs, faReact, faHtml5, faJava } from '@fortawesome/free-brands-svg-icons';
+import {
+  faHome,
+  faDesktop,
+  faComments,
+  faGraduationCap,
+  faLeaf,
+  faBuilding,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faStripeS,
+  faFacebookF,
+  faGithub,
+  faJs,
+  faReact,
+  faHtml5,
+  faJava,
+} from '@fortawesome/free-brands-svg-icons';
 
 library.add(faHome);
 library.add(faDesktop);

@@ -22,36 +22,36 @@ export default (state = initalState, action) => {
     futureList,
   } = action;
 
-  switch(type) {
+  switch (type) {
     case GET_MENU_LIST:
-    return {
-      ...state,
-      ...{
-        menuList,
-      },
-    };
+      return {
+        ...state,
+        ...{
+          menuList,
+        },
+      };
     case GET_TECHNOLOGY_LIST:
-    return {
-      ...state,
-      ...{
-        technologyList,
-      },
-    };
+      return {
+        ...state,
+        ...{
+          technologyList,
+        },
+      };
     case GET_PROJECT_LIST:
-    return {
-      ...state,
-      ...{
-        projectList,
-      },
-    };
+      return {
+        ...state,
+        ...{
+          projectList,
+        },
+      };
     case GET_FUTURE_LIST:
-    return {
-      ...state,
-      ...{
-        futureList,
-      },
-    };
+      return {
+        ...state,
+        ...{
+          futureList,
+        },
+      };
     default:
-    return state;
+      return state;
   }
 };
