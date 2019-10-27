@@ -103,6 +103,8 @@ module.exports = (env, options) => {
             port: 3003,
             contentBase: path.resolve(__dirname, 'public'),
             compress: true,
+            hot: true,
+            inline: true,
             watchContentBase: true,
             historyApiFallback: true
         };
